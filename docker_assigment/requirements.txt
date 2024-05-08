@@ -1,0 +1,6 @@
+pandas
+sqlalchemy
+faker
+psycopg2
+datetime
+pytz

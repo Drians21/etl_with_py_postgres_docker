@@ -1,0 +1,32 @@
+version: '3'
+services:
+  postgres-db:
+    image: postgres:15
+    container_name: postgres_assignment_docker
+    env_file:
+      - .env
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    ports:
+      - 5437:5432/tcp
+    networks:
+      - network-docker
+  python_docker:
+#     restart: unless-stopped
+    build:
+      context: .
+      dockerfile: Dockerfile
+#     volumes:
+#       - .:/etl_docker
+    depends_on:
+      - postgres-db
+    networks:
+      - network-docker
+
+volumes:
+  pg_data:
+    external: true
+
+networks:
+  network-docker:
+    external: true
