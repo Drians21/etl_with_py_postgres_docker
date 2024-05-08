@@ -137,7 +137,7 @@ Postgres disini digunakan untuk menyimpan data
 
 Data yang sudah di load :
 
-![table](image/table_data_after_etl.png)
+![table](docker_assigment/image/table_data_after_etl.png)
 
 \
 \
